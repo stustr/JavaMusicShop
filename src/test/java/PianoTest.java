@@ -15,6 +15,19 @@ public class PianoTest {
     @Test
     public void checkHasInstrumentType() {
 
-        assertEquals(InstrumentType.PERCUSSION, piano.getType());
+        assertEquals(InstrumentType.PERCUSSION,
+                piano.getType());
+    }
+
+    @Test
+    public void checkHasSize() {
+
+        assertEquals(PianoSize.BABY_GRAND, piano.getSize());
+    }
+
+    @Test
+    public void checkCanPlay() {
+
+        assertEquals("Plinky plonk", piano.play());
     }
 }

@@ -4,6 +4,11 @@ public class Piano extends Instrument {
         super(type);
         this.size = size;
     }
+    public PianoSize getSize() {
+        return size;
+    }
 
-
+    public String play() {
+        return "Plinky plonk";
+    }
 }
