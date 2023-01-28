@@ -11,7 +11,8 @@ public class PianoTest {
 
     @Before
     public void setUp() throws Exception {
-        piano = new Piano(InstrumentType.PERCUSSION,
+        piano = new Piano(InstrumentType.PERCUSSION, "A " +
+                "great item", 19.99, 29.99,
                 PianoSize.BABY_GRAND);
     }
 
@@ -20,6 +21,30 @@ public class PianoTest {
 
         assertEquals(InstrumentType.PERCUSSION,
                 piano.getType());
+    }
+
+    @Test
+    public void checkName() {
+
+        assertEquals("Piano", piano.getName());
+    }
+
+    @Test
+    public void checkDescription() {
+
+        assertEquals("A great item", piano.getDescription());
+    }
+
+    @Test
+    public void checkBuyPrice() {
+
+        assertEquals(Double.valueOf(19.99), piano.getBuyPrice());
+    }
+
+    @Test
+    public void checkSellPrice() {
+
+        assertEquals(Double.valueOf(29.99), piano.getSellPrice());
     }
 
     @Test
@@ -33,5 +58,11 @@ public class PianoTest {
 
         assertEquals(piano.getName() + " is playing",
                 piano.play());
+    }
+
+    @Test
+    public void checkCanCalculateMarkup() {
+
+        assertEquals(10, piano.calculateMarkUp(), 0.00);
     }
 }

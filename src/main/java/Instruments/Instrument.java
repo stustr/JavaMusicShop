@@ -1,12 +1,21 @@
 package Instruments;
 
-abstract class Instrument implements Playable {
+import behaviours.Sellable;
+
+abstract class Instrument implements Playable, Sellable {
     private InstrumentType type;
     private String name;
+    private String description;
+    private Double buyPrice;
+    private Double sellPrice;
 
-    public Instrument(InstrumentType type, String name) {
+    public Instrument(InstrumentType type, String name,
+                      String description, Double buyPrice, Double sellPrice) {
         this.type = type;
         this.name = name;
+        this.description = description;
+        this.buyPrice = buyPrice;
+        this.sellPrice = sellPrice;
     }
 
     @Override
@@ -20,5 +29,21 @@ abstract class Instrument implements Playable {
 
     public String getName() {
         return name;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public Double getBuyPrice() {
+        return buyPrice;
+    }
+
+    public Double getSellPrice() {
+        return sellPrice;
+    }
+
+    public Double calculateMarkUp() {
+        return sellPrice - buyPrice;
     }
 }

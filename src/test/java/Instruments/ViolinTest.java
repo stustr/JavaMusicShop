@@ -10,7 +10,8 @@ public class ViolinTest {
 
     @Before
     public void setUp() throws Exception {
-        violin = new Violin(InstrumentType.STRINGS);
+        violin = new Violin(InstrumentType.STRINGS, "A " +
+                "great thing", 10.00, 20.00);
     }
 
     @Test
