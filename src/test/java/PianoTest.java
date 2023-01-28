@@ -1,3 +1,6 @@
+import Instruments.InstrumentType;
+import Instruments.Piano;
+import Instruments.PianoSize;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -28,6 +31,7 @@ public class PianoTest {
     @Test
     public void checkCanPlay() {
 
-        assertEquals("Plinky plonk", piano.play());
+        assertEquals(piano.getName() + " is playing",
+                piano.play());
     }
 }

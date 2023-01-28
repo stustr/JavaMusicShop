@@ -1,3 +1,5 @@
+import behaviours.Sellable;
+
 public class StockItem implements Sellable {
     private String description;
     private Double buyPrice;

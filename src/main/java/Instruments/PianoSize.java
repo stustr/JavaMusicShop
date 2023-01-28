@@ -1,3 +1,5 @@
+package Instruments;
+
 public enum PianoSize {
     UPRIGHT,
     BABY_GRAND,

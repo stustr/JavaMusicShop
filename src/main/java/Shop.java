@@ -1,3 +1,5 @@
+import behaviours.Sellable;
+
 import java.util.HashMap;
 
 public class Shop {
