@@ -1,3 +1,3 @@
-public interface ISell {
+public interface Sellable {
     public Double calculateMarkUp();
 }

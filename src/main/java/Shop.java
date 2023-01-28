@@ -1,14 +1,19 @@
-import java.util.ArrayList;
+import java.util.HashMap;
 
 public class Shop {
-    private ArrayList<ISell> stock;
+    private HashMap<Sellable, Integer> stock;
 
-    public Shop(ArrayList<ISell> stock) {
+    public Shop(HashMap<Sellable, Integer> stock) {
         this.stock = stock;
     }
 
-    public ArrayList<ISell> getStock() {
+    public HashMap<Sellable, Integer> getStock() {
         return stock;
     }
 
+    public void addStock(Sellable sellable,
+                         Integer quantity) {
+        stock.put(sellable, stock.getOrDefault(sellable,
+                0) + quantity);
+    }
 }

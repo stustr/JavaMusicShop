@@ -1,4 +1,4 @@
-public class StockItem implements ISell {
+public class StockItem implements Sellable {
     private String description;
     private Double buyPrice;
     private Double sellPrice;

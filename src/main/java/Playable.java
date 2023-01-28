@@ -1,3 +1,3 @@
-public interface IPlay {
+public interface Playable {
     public String play();
 }
