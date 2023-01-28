@@ -1,3 +1,4 @@
+import OtherItems.SheetMusic;
 import behaviours.Sellable;
 import org.junit.Before;
 import org.junit.Test;
@@ -9,11 +10,14 @@ import static org.junit.Assert.*;
 public class ShopTest {
     Shop shop;
     HashMap<Sellable, Integer> stock;
-    StockItem stockItem;
+    SheetMusic sheetMusic;
 
     @Before
     public void setUp() throws Exception {
-        stockItem = new StockItem("guitar", 19.99, 29.99);
+        sheetMusic = new SheetMusic("Sheet music",
+                "Britten",
+                "Storm", 1.00
+                , 2.00);
         stock = new HashMap<>();
         shop = new Shop(stock);
     }
@@ -27,16 +31,16 @@ public class ShopTest {
     @Test
     public void checkCanAddStock() {
 
-        shop.addStock(stockItem,1);
-        shop.addStock(stockItem,1);
+        shop.addStock(sheetMusic,1);
+        shop.addStock(sheetMusic,1);
         assertEquals((Integer) 2,
-                shop.getStock().get(stockItem));
+                shop.getStock().get(sheetMusic));
     }
 
     @Test
     public void canRemoveItem() {
-        stock.put(stockItem, 1);
-        stock.remove(stockItem);
+        stock.put(sheetMusic, 1);
+        stock.remove(sheetMusic);
         assertEquals(0, shop.getStock().size());
     }
 }
