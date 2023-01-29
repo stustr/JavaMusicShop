@@ -1,3 +1,5 @@
+package Instruments;
+
 import Instruments.InstrumentType;
 import Instruments.Piano;
 import Instruments.PianoSize;
