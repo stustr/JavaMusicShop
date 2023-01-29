@@ -47,8 +47,14 @@ public class ShopTest {
     @Test
     public void checkRemoveItem() {
         shop.addStock(sheetMusic, 1);
-        stock.remove(sheetMusic);
+        shop.removeStock(sheetMusic, 1);
         assertEquals(0, shop.getStock().size());
+        shop.addStock(sheetMusic, 3);
+        shop.removeStock(sheetMusic, 5);
+        assertEquals(3, shop.getItemQuantity(sheetMusic));
+        shop.addStock(sheetMusic, 2);
+        shop.removeStock(sheetMusic, 1);
+        assertEquals(4, shop.getItemQuantity(sheetMusic));
     }
 
     @Test

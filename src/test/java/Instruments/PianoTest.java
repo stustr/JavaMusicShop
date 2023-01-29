@@ -60,6 +60,7 @@ public class PianoTest {
 
         assertEquals(piano.getName() + " is playing",
                 piano.play());
+        System.out.println(piano.play());
     }
 
     @Test
